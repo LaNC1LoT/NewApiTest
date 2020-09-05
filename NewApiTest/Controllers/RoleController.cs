@@ -28,6 +28,9 @@ namespace NewApiTest.Controllers
             if (!roles.Any())
                 return BadRequest("Users not found!");
 
+            if (!roles.Any())
+                return BadRequest("Users not found!");
+
             return Ok(roles);
         }
 
