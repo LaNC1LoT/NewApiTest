@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace NewApiTest.Models
 {
+    /// <summary>
+    /// Роли пользователей
+    /// </summary>
     public class Role
     {
         public Role()
@@ -13,7 +16,14 @@ namespace NewApiTest.Models
             //ApiMethodRoles = new HashSet<ApiMethodRole>();
         }
 
+        /// <summary>
+        /// Ид 
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Имя роли
+        /// </summary>
         public string RoleName { get; set; }
         public bool? IsDeleted { get; set; }
         public virtual ICollection<User> Users { get; set; }

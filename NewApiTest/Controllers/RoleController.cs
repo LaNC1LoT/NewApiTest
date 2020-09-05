@@ -21,7 +21,7 @@ namespace NewApiTest.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Role>>> GetAll(CancellationToken cancellationToken = default)
+        public async Task<ActionResult<IEnumerable<Role>>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             List<Role> roles = await _farmAppContext.Roles.Where(x => x.IsDeleted == false).ToListAsync(cancellationToken);
 
@@ -35,11 +35,11 @@ namespace NewApiTest.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Role>> PostAsync(Role role, CancellationToken cancellationToken = default)
+        public async Task<ActionResult<Role>> PostRoleAsync(Role role, CancellationToken cancellationToken = default)
         {
             if (role == null)
                 return BadRequest("Тут пусто");
-
+            /// Здесь костыль
             _farmAppContext.Roles.Add(role);
             await _farmAppContext.SaveChangesAsync(cancellationToken);
 

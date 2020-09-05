@@ -39,6 +39,11 @@ namespace NewApiTest.Controllers
             return Ok(users);
         }
 
+        /// <summary>
+        /// Метод получения пользователей
+        /// </summary>
+        /// <param name="id">Id пользователя</param>
+        /// <returns>User</returns>
         [HttpGet("{id}")]
         public ActionResult<User> GetAll(int id)
         {
